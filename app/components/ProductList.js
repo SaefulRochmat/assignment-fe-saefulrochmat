@@ -145,9 +145,9 @@ export default function ProductList() {
             <ProductCard key={item.id} product={item} />
         ))
         ) : (
-        <p className="text-white text-center col-span-full">
-            Produk Tidak Ditemukan
-        </p>
+            <p className="text-4xl font-bold text-center col-span-full flex justify-center items-start min-h-screen pt-32 bg-gradient-to-r from-red-300 via-yellow-200 to-green-400 bg-clip-text text-transparent select-auto">
+                Produk Tidak Ditemukan
+            </p>
         ))}
     </section>
 
