@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ProductCard({ product }) {
     return (
         <>
-            <div className="w-full max-w-xs bg-slate-600 rounded-xl duration-500 hover:scale-105 border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]">
+            <div className="w-full max-w-xs rounded-md shadow-md mb-4 cursor-pointer transition duration-300 ease-in hover:translate-y-1 hover:scale-110">
                 <div className="relative w-full h-48 sm:h-52">
                     <Image
                     src={product.image}
@@ -14,18 +14,18 @@ export default function ProductCard({ product }) {
                     />
                 </div>
                 <div className="px-4 py-3">
-                    <span className="text-slate-100 mr-3 uppercase text-xs">
+                    <span className="text-slate-700 font-medium mr-3 uppercase text-xs">
                     {product.category}
                     </span>
-                    <p className="text-lg font-bold text-slate-100 truncate block capitalize">
+                    <p className="text-lg font-bold truncate block capitalize">
                     {product.title}
                     </p>
                     <div className="flex items-center">
-                    <p className="text-xl font-semibold text-slate-100 cursor-auto my-3">
+                    <p className="text-xl font-semibold text-slate-800 cursor-auto my-3">
                         $ {product.price}
                     </p>
                     <del>
-                        <p className="text-sm text-slate-100 cursor-auto ml-2">
+                        <p className="text-sm text-slate-600 cursor-auto ml-2">
                         $ {product.price}
                         </p>
                     </del>

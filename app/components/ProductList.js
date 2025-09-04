@@ -47,7 +47,7 @@ export default function ProductList() {
 
   if (isLoading) return <div className="flex justify-center items-start min-h-screen pt-32">
             <div
-                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] text-blue-500"
                 role="status"
             >
                 <span className="sr-only">Loading...</span>
@@ -71,15 +71,15 @@ export default function ProductList() {
 
   return (
     <>
-        <section className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 p-4">
+        <section className="bg-white shadow-md sticky top-0 z-50 flex sm:flex-row justify-center items-center gap-4 sm:gap-6 p-4">
             {/* Search Bar */}
-            <div className="relative w-full sm:w-1/3">
+            <div className="relative w-[180px] sm:w-1/3">
                 <input
                 type="text"
-                placeholder="Cari produk..."
+                placeholder="Search Products..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="bg-slate-500 h-10 px-5 pr-10 rounded-full text-sm border border-slate-400 w-full focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300"
+                className="h-10 px-5 pr-10 rounded text-sm border-1 w-full focus:outline-none focus:ring-1 focus:ring-slate-400 transition-all duration-300"
                 />
                 <button
                 type="submit"
@@ -96,13 +96,13 @@ export default function ProductList() {
             </div>
 
             {/* Filter Kategori */}
-            <div className="w-full sm:w-1/4">
+            <div className="w-[129px] sm:w-1/8">
                 <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="bg-slate-500 border border-slate-400 rounded px-4 py-2 w-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="border rounded px-4 py-2 w-full text-sm focus:outline-none focus:ring-1 focus:ring-slate-400"
                 >
-                <option value="All">All</option>
+                <option value="All">All Category</option>
                 {categories &&
                     categories.map((cat) => (
                     <option key={cat} value={cat}>
@@ -113,24 +113,24 @@ export default function ProductList() {
             </div>
 
             {/* Sort Harga */}
-            <div className="w-full sm:w-1/4">
+            <div className="w-[128px] sm:w-1/8">
                 <select
                 value={sortedPrice}
                 onChange={(e) => setSortedPrice(e.target.value)}
-                className="bg-slate-500 border border-slate-400 rounded px-4 py-2 w-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="border rounded px-4 py-2 w-full text-sm focus:outline-none focus:ring-1 focus:ring-slate-400"
                 >
-                <option value="default">Default</option>
-                <option value="asc">Harga: Rendah → Tinggi</option>
-                <option value="desc">Harga: Tinggi → Rendah</option>
+                    <option value="default">All Price</option>
+                    <option value="asc">Price: Lowest → Higest</option>
+                    <option value="desc">Price: Higest → Lowest</option>
                 </select>
             </div>
-            </section>
+        </section>
 
 
       {isSearching && (
         <div className="flex justify-center items-start min-h-screen pt-32">
             <div
-                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+                className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
                 role="status"
             >
                 <span className="sr-only">Loading...</span>
@@ -138,7 +138,7 @@ export default function ProductList() {
         </div>
       )}
 
-    <section className="w-full max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-6 mt-10 mb-5 justify-items-center">
+    <section className="w-full max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-2 mt-10 mb-5 justify-items-center shadow-md border-t-4 border-red-800 p-4">
     {!isSearching &&
         (filteredProducts.length > 0 ? (
         filteredProducts.map((item) => (
