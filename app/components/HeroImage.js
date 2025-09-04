@@ -49,7 +49,7 @@ export default function HeroImage() {
       >
         {images.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="relative w-full h-[400px] sm:h-[500px]">
+            <div className="relative w-full h-[400px] sm:h-[350px]">
               <Image
                 src={item.image}
                 alt={item.title}

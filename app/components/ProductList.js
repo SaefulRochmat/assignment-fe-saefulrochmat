@@ -37,16 +37,26 @@ export default function ProductList({
   }
 
   return (
-    <section className="w-full shadow-md max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-2 mt-10 mb-5 justify-items-center">
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((item) => (
-          <ProductCard key={item.id} product={item} />
-        ))
-      ) : (
-        <p className="text-2xl font-semibold text-center col-span-full">
-          Produk Tidak Ditemukan
-        </p>
-      )}
-    </section>
+    <>
+      {/* 🔹 Indikator Kategori */}
+      <div className="w-full shadow-md max-w-7xl mx-auto p-5 text-left my-4 border-t-2 border-red-700">
+        <h2 className="text-2xl font-bold">
+          {selectedCategory === "All" ? "All Products" : `Product ${selectedCategory}`}
+        </h2>
+      </div>
+
+      {/* 🔹 Grid Produk */}
+      <section className="w-full shadow-md max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-2 mt-4 mb-5 justify-items-center">
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((item) => (
+            <ProductCard key={item.id} product={item} />
+          ))
+        ) : (
+          <p className="text-2xl font-semibold text-center col-span-full">
+            Produk Tidak Ditemukan
+          </p>
+        )}
+      </section>
+    </>
   );
 }

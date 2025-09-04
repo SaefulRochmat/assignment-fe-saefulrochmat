@@ -20,7 +20,7 @@ export default function NavigationBar({
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="text-2xl font-extrabold text-slate-800 tracking-tight">
-            Fake<span className="text-indigo-600">Store</span>
+            Fake<span className="text-red-700">Store</span>
           </div>
 
           {/* Search Bar */}
@@ -30,7 +30,7 @@ export default function NavigationBar({
               placeholder="Search products..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full h-10 pl-4 pr-10 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm shadow-sm"
+              className="w-full h-10 pl-4 pr-10 rounded-xl border border-gray-200 focus:ring-2 focus:ring-red-600 focus:outline-none text-sm shadow-sm"
             />
             <Search
               className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -44,7 +44,7 @@ export default function NavigationBar({
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 rounded-xl border border-gray-200 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="px-4 py-2 rounded-xl border border-gray-200 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600"
             >
               <option value="All">All Categories</option>
               {categories &&
@@ -59,7 +59,7 @@ export default function NavigationBar({
             <select
               value={sortedPrice}
               onChange={(e) => setSortedPrice(e.target.value)}
-              className="px-4 py-2 rounded-xl border border-gray-200 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="px-4 py-2 rounded-xl border border-gray-200 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-red-600"
             >
               <option value="default">Default</option>
               <option value="asc">Price: Low → High</option>
